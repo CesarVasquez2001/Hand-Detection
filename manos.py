@@ -19,7 +19,7 @@ color_ymin = (0,130,255) # Punto más alto del contorno
 color_fingers = (0,255,255)
 while True:
   ret, frame = cap.read()
-  if ret == False: break
+  if ret == False: break  
   # Redimensionar la imagen para que tenga un ancho de 1000
   frame = imutils.resize(frame,width=900)     
   frame = cv2.flip(frame,1)
