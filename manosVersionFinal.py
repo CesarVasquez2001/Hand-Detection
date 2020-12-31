@@ -1,3 +1,4 @@
+
 import cv2
 import numpy as np
 import imutils
@@ -24,20 +25,21 @@ while True:
   ret, frame = cap.read()
   if ret == False: break
 
-  # Redimensionar la imagen para que tenga un ancho de 640
-  frame = imutils.resize(frame,width=640)     
+   # Redimensionar la imagen para que tenga un ancho de 1000
+  frame = imutils.resize(frame,width=900)     
   frame = cv2.flip(frame,1)
   frameAux = frame.copy()
   
   if bg is not None:
 
     # Determinar la región de interés
-    ROI = frame[50:300,380:600]
-    cv2.rectangle(frame,(380-2,50-2),(600+2,300+2),color_fingers,1)
+    ROI = frame[50:500,380:800]
+    cv2.rectangle(frame,(380-2,50-2),(800+2,500+2),color_fingers,1)
     grayROI = cv2.cvtColor(ROI,cv2.COLOR_BGR2GRAY)
 
     # Región de interés del fondo de la imagen
-    bgROI = bg[50:300,380:600]
+    bgROI = bg[50:500,380:800]
+
 
     # Determinar la imagen binaria (background vs foreground)
     dif = cv2.absdiff(grayROI, bgROI)
