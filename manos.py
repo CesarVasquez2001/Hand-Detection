@@ -1,7 +1,9 @@
 import cv2
 import numpy as np
+#Redimenzionar lo fotogramas
 import imutils
-cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(1,cv2.CAP_DSHOW)
+#Sustraccion del fondo y la imagen de primer plano
 bg = None
 # COLORES PARA VISUALIZACIÓN
 color_start = (204,204,0)
